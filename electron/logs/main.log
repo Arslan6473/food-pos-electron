@@ -1,0 +1,171 @@
+[2025-12-07T13:38:39.924Z] === Starting print process ===
+[2025-12-07T13:38:39.925Z] HTML content length: 1833 chars
+[2025-12-07T13:38:39.925Z] Order data received: No
+[2025-12-07T13:38:39.926Z] Attempting optimized system printing...
+[2025-12-07T13:38:39.927Z] Creating print window with receipt dimensions...
+[2025-12-07T13:38:39.942Z] Receipt HTML saved to: C:\Users\KASHIF~1\AppData\Local\Temp\receipt_1765114719935.html
+[2025-12-07T13:38:39.943Z] Loading URL: file://C:\Users\KASHIF~1\AppData\Local\Temp\receipt_1765114719935.html
+[2025-12-07T13:38:40.132Z] Print window loaded successfully
+[2025-12-07T13:38:40.639Z] Executing print command...
+[2025-12-07T13:39:00.509Z] === Starting print process ===
+[2025-12-07T13:39:00.511Z] HTML content length: 1837 chars
+[2025-12-07T13:39:00.523Z] Order data received: No
+[2025-12-07T13:39:00.523Z] Attempting optimized system printing...
+[2025-12-07T13:39:00.524Z] Creating print window with receipt dimensions...
+[2025-12-07T13:39:00.538Z] Receipt HTML saved to: C:\Users\KASHIF~1\AppData\Local\Temp\receipt_1765114740536.html
+[2025-12-07T13:39:00.538Z] Loading URL: file://C:\Users\KASHIF~1\AppData\Local\Temp\receipt_1765114740536.html
+[2025-12-07T13:39:00.725Z] Print window loaded successfully
+[2025-12-07T13:39:01.227Z] Executing print command...
+[2025-12-07T13:45:17.274Z] === Starting print process ===
+[2025-12-07T13:45:17.275Z] HTML content length: 231 chars
+[2025-12-07T13:45:17.276Z] Order data provided: Yes
+[2025-12-07T13:45:17.276Z] Attempt 1: Optimized system printing...
+[2025-12-07T13:45:17.277Z] Creating print window with receipt dimensions...
+[2025-12-07T13:45:17.288Z] Receipt HTML saved to: C:\Users\KASHIF~1\AppData\Local\Temp\receipt_1765115117287.html
+[2025-12-07T13:45:17.460Z] Print window loaded successfully
+[2025-12-07T13:45:17.965Z] Executing print command...
+[2025-12-07T13:45:17.965Z] Print options: {"silent":true,"printBackground":true,"deviceName":"","margins":{"marginType":"none"},"pageSize":{"width":203900,"height":100000},"scaleFactor":100,"landscape":false,"pagesPerSheet":1,"collate":false,"copies":1,"color":false}
+[2025-12-07T13:45:18.406Z] Print callback -> success: true, reason: none
+[2025-12-07T13:45:18.409Z] Print window closed
+[2025-12-07T13:45:18.411Z] Temp file deleted
+[2025-12-07T13:45:18.411Z] === Print completed successfully via system printer ===
+[2025-12-07T13:50:24.081Z] === Starting print process ===
+[2025-12-07T13:50:24.082Z] HTML content length: 625 chars
+[2025-12-07T13:50:24.082Z] Order data provided: Yes
+[2025-12-07T13:50:24.083Z] Attempt 1: Optimized system printing...
+[2025-12-07T13:50:24.084Z] Creating print window with receipt dimensions...
+[2025-12-07T13:50:24.095Z] Receipt HTML saved to: C:\Users\KASHIF~1\AppData\Local\Temp\receipt_1765115424093.html
+[2025-12-07T13:50:24.290Z] Print window loaded successfully
+[2025-12-07T13:50:24.800Z] Executing print command...
+[2025-12-07T13:50:24.801Z] Print options: {"silent":true,"printBackground":true,"deviceName":"","margins":{"marginType":"none"},"pageSize":{"width":203900,"height":100000},"scaleFactor":100,"landscape":false,"pagesPerSheet":1,"collate":false,"copies":1,"color":false}
+[2025-12-07T13:50:25.753Z] Print callback -> success: true, reason: none
+[2025-12-07T13:50:25.756Z] Print window closed
+[2025-12-07T13:50:25.757Z] Temp file deleted
+[2025-12-07T13:50:25.758Z] === Print completed successfully via system printer ===
+[2025-12-07T13:50:25.789Z] === Starting print process ===
+[2025-12-07T13:50:25.790Z] HTML content length: 5172 chars
+[2025-12-07T13:50:25.790Z] Order data provided: Yes
+[2025-12-07T13:50:25.791Z] Attempt 1: Optimized system printing...
+[2025-12-07T13:50:25.791Z] Creating print window with receipt dimensions...
+[2025-12-07T13:50:25.801Z] Receipt HTML saved to: C:\Users\KASHIF~1\AppData\Local\Temp\receipt_1765115425800.html
+[2025-12-07T13:50:26.009Z] Print window loaded successfully
+[2025-12-07T13:50:26.513Z] Executing print command...
+[2025-12-07T13:50:26.514Z] Print options: {"silent":true,"printBackground":true,"deviceName":"","margins":{"marginType":"none"},"pageSize":{"width":203900,"height":100000},"scaleFactor":100,"landscape":false,"pagesPerSheet":1,"collate":false,"copies":1,"color":false}
+[2025-12-07T13:50:27.569Z] Print callback -> success: true, reason: none
+[2025-12-07T13:50:27.572Z] Print window closed
+[2025-12-07T13:50:27.573Z] Temp file deleted
+[2025-12-07T13:50:27.574Z] === Print completed successfully via system printer ===
+[2025-12-07T13:54:13.536Z] === Starting print process ===
+[2025-12-07T13:54:13.537Z] HTML content length: 625 chars
+[2025-12-07T13:54:13.538Z] Order data provided: Yes
+[2025-12-07T13:54:13.538Z] HTML preview: 
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    @page { size: 80mm auto; margin: 0; }
+    * { font-family: monospace; font-size: 12px; margin: 0; padding: 0; }
+    body { width: 280px; margin: 0 auto; padding: 10px; }
+  </style>
+</head>
+<body>
+  <h1 style="text-align: center;">TEST RECEIPT</h1>
+  <p style="text-align: center;">Cheeziness Burger</p>
+  <hr>
+  <p>Order #: TEST-001</p>
+  <p>Date: 12/7/2025</p>
+  <p>Time: 6:54:13 PM</p>
+  <hr>
+  <p>Test Burger x 1 = Rs 10.00</p>...
+[2025-12-07T13:54:13.539Z] Contains <html> tag: true
+[2025-12-07T13:54:13.539Z] Contains <body> tag: true
+[2025-12-07T13:54:13.540Z] Creating print window...
+[2025-12-07T13:54:13.550Z] HTML saved to: C:\Users\KASHIF~1\AppData\Local\Temp\receipt_1765115653549.html
+[2025-12-07T13:54:13.550Z] File size: 625 bytes
+[2025-12-07T13:54:13.551Z] Loading URL: file://C:\Users\KASHIF~1\AppData\Local\Temp\receipt_1765115653549.html
+[2025-12-07T13:54:13.740Z] Print window loaded successfully
+[2025-12-07T13:54:14.241Z] Executing print command...
+[2025-12-07T13:54:14.241Z] Print options: {"silent":true,"printBackground":true,"deviceName":"","pageSize":"80mm","margins":{"marginType":"none"},"scaleFactor":100,"landscape":false,"copies":1}
+[2025-12-07T14:01:11.032Z] === Starting print process ===
+[2025-12-07T14:01:11.033Z] HTML content length: 765 chars
+[2025-12-07T14:01:11.034Z] Order data provided: Yes
+[2025-12-07T14:01:11.034Z] HTML preview: <!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body { 
+      font-family: 'Courier New', monospace; 
+      font-size: 12px; 
+      width: 280px; 
+      margin: 0 auto; 
+      padding: 10px;
+    }
+    .center { text-align: center; }
+    hr { border: none; border-top: 1px dashed #000; margin: 10px 0; }
+  </style>
+</head>
+<body>
+  <div class="center" style="font-size: 16px; font-weight: bold;">TEST PRINT</div>
+  <div class="center">Cheeziness Burger</div>
+  <hr>
+  <div>Order #...
+[2025-12-07T14:01:11.035Z] Contains <html> tag: true
+[2025-12-07T14:01:11.035Z] Contains <body> tag: true
+[2025-12-07T14:01:11.036Z] Creating print window...
+[2025-12-07T14:01:11.047Z] HTML saved to: C:\Users\KASHIF~1\AppData\Local\Temp\receipt_1765116071046.html
+[2025-12-07T14:01:11.047Z] File size: 765 bytes
+[2025-12-07T14:01:11.048Z] Loading URL: file://C:\Users\KASHIF~1\AppData\Local\Temp\receipt_1765116071046.html
+[2025-12-07T14:01:11.209Z] Print window loaded successfully
+[2025-12-07T14:01:11.724Z] Executing print command...
+[2025-12-07T14:01:11.724Z] Print options: {"silent":true,"printBackground":true,"deviceName":"","margins":{"marginType":"none"},"scaleFactor":100,"landscape":false,"copies":1,"pageSize":"Letter"}
+[2025-12-07T14:01:12.548Z] Print successful with one of the page sizes
+[2025-12-07T14:01:12.551Z] Temp file deleted
+[2025-12-07T14:01:12.552Z] === Print completed successfully ===
+[2025-12-07T14:25:56.343Z] === Starting print process ===
+[2025-12-07T14:25:56.343Z] HTML content length: 765 chars
+[2025-12-07T14:25:56.344Z] Order data provided: Yes
+[2025-12-07T14:25:56.344Z] HTML preview: <!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body { 
+      font-family: 'Courier New', monospace; 
+      font-size: 12px; 
+      width: 280px; 
+      margin: 0 auto; 
+      padding: 10px;
+    }
+    .center { text-align: center; }
+    hr { border: none; border-top: 1px dashed #000; margin: 10px 0; }
+  </style>
+</head>
+<body>
+  <div class="center" style="font-size: 16px; font-weight: bold;">TEST PRINT</div>
+  <div class="center">Cheeziness Burger</div>
+  <hr>
+  <div>Order #...
+[2025-12-07T14:25:56.345Z] Contains <html> tag: true
+[2025-12-07T14:25:56.345Z] Contains <body> tag: true
+[2025-12-07T14:25:56.346Z] Creating print window...
+[2025-12-07T14:25:56.356Z] HTML saved to: C:\Users\KASHIF~1\AppData\Local\Temp\receipt_1765117556355.html
+[2025-12-07T14:25:56.357Z] File size: 765 bytes
+[2025-12-07T14:25:56.357Z] Loading URL: file://C:\Users\KASHIF~1\AppData\Local\Temp\receipt_1765117556355.html
+[2025-12-07T14:25:56.559Z] Print window loaded successfully
+[2025-12-07T14:25:57.061Z] Executing print command...
+[2025-12-07T14:25:57.061Z] Print options: {"silent":true,"printBackground":true,"deviceName":"","margins":{"marginType":"none"},"scaleFactor":100,"landscape":false,"copies":1,"pageSize":"Letter"}
+[2025-12-07T14:25:57.569Z] Print successful with one of the page sizes
+[2025-12-07T14:25:57.574Z] Temp file deleted
+[2025-12-07T14:25:57.574Z] === Print completed successfully ===
+[2025-12-07T14:33:31.760Z] Listing printers...
+[2025-12-07T14:33:31.761Z] Error listing printers: mainWindow.webContents.getPrinters is not a function
+[2025-12-07T14:34:11.009Z] === PRINT REQUEST RECEIVED ===
+[2025-12-07T14:34:11.010Z] Generating text-based receipt...
+[2025-12-07T14:34:11.049Z] Receipt HTML length: 1238 chars
+[2025-12-07T14:34:11.050Z] Starting print...
+[2025-12-07T14:34:11.229Z] Print window loaded
+[2025-12-07T14:34:11.535Z] Executing print...
+[2025-12-07T14:34:12.565Z] Print result: success=true, reason=none
+[2025-12-07T14:34:12.565Z] === PRINT SUCCESSFUL ===

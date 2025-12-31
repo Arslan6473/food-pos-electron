@@ -1,0 +1,146 @@
+
+[2025-12-06T14:59:22.817Z] PRINT ERROR: Invalid deviceName provided
+[2025-12-06T15:01:26.137Z] PRINT ERROR: [TimedOutError] Make sure your printer is connected
+[2025-12-06T15:03:02.787Z] PRINT ERROR: [TimedOutError] Make sure your printer is connected
+[2025-12-06T15:04:54.846Z] PRINT ERROR: [TimedOutError] Make sure your printer is connected
+[2025-12-06T15:09:10.654Z] PRINT ERROR: [TimedOutError] Make sure your printer is connected
+[2025-12-06T15:11:24.723Z] PRINT ERROR: TypeError: mainWindow.webContents.getPrinters is not a function
+[2025-12-06T15:12:25.104Z] PRINT ERROR: TypeError: mainWindow.webContents.getPrinters is not a function
+[2025-12-06T15:21:24.122Z] Found printers: ["Microsoft Print to PDF"]
+[2025-12-06T15:21:24.123Z] Selected printer: Microsoft Print to PDF
+[2025-12-06T15:21:24.131Z] HTML temp file created: tempDir, bill_1765034484123.html
+[2025-12-06T15:21:24.809Z] Print window fully loaded and rendered.
+[2025-12-06T15:21:29.436Z] Print callback -> success: false, reason: Print job failed
+[2025-12-06T15:21:29.436Z] Temp file deleted.
+[2025-12-06T15:21:29.437Z] Print failed: Print job failed
+[2025-12-06T15:26:05.366Z] Found printers: ["POS-80","Microsoft Print to PDF"]
+[2025-12-06T15:26:05.366Z] Selected printer: POS-80
+[2025-12-06T15:26:05.367Z] HTML temp file created: tempDir, bill_1765034765367.html
+[2025-12-06T15:26:05.929Z] Print window fully loaded and rendered.
+[2025-12-06T15:26:06.277Z] Print callback -> success: true, reason: 
+[2025-12-06T15:26:06.277Z] Temp file deleted.
+[2025-12-06T15:26:06.277Z] Print job completed successfully.
+[2025-12-06T15:26:24.912Z] Found printers: ["POS-80","Microsoft Print to PDF"]
+[2025-12-06T15:26:24.912Z] Selected printer: POS-80
+[2025-12-06T15:26:24.913Z] HTML temp file created: tempDir, bill_1765034784912.html
+[2025-12-06T15:26:25.506Z] Print window fully loaded and rendered.
+[2025-12-06T15:26:25.907Z] Print callback -> success: true, reason: 
+[2025-12-06T15:26:25.908Z] Temp file deleted.
+[2025-12-06T15:26:25.908Z] Print job completed successfully.
+[2025-12-06T15:27:05.159Z] Found printers: ["POS-80","Microsoft Print to PDF"]
+[2025-12-06T15:27:05.159Z] Selected printer: POS-80
+[2025-12-06T15:27:05.160Z] HTML temp file created: tempDir, bill_1765034825160.html
+[2025-12-06T15:27:05.785Z] Print window fully loaded and rendered.
+[2025-12-06T15:27:06.312Z] Print callback -> success: true, reason: 
+[2025-12-06T15:27:06.313Z] Temp file deleted.
+[2025-12-06T15:27:06.313Z] Print job completed successfully.
+[2025-12-06T15:28:02.289Z] PRINT ERROR: [TimedOutError] Make sure your printer is connected
+[2025-12-06T15:28:52.586Z] PRINT ERROR: [TimedOutError] Make sure your printer is connected
+[2025-12-06T15:30:42.606Z] Found printers: ["POS-80","Microsoft Print to PDF"]
+[2025-12-06T15:30:42.607Z] Selected printer: POS-80
+[2025-12-06T15:30:42.614Z] HTML temp file created: C:\Users\KASHIF~1\AppData\Local\Temp\bill_1765035042607.html
+[2025-12-06T15:30:43.187Z] Print window fully loaded and rendered.
+[2025-12-06T15:30:43.526Z] Print callback -> success: true, reason: 
+[2025-12-06T15:30:43.527Z] Temp file deleted.
+[2025-12-06T15:30:43.527Z] Print job completed successfully.
+[2025-12-06T15:31:45.110Z] Found printers: ["POS-80","Microsoft Print to PDF"]
+[2025-12-06T15:31:45.111Z] Selected printer: POS-80
+[2025-12-06T15:31:45.119Z] HTML temp file created: C:\Users\KASHIF~1\AppData\Local\Temp\bill_1765035105111.html
+[2025-12-06T15:31:45.740Z] Print window fully loaded and rendered.
+[2025-12-06T15:31:46.952Z] Print callback -> success: true, reason: 
+[2025-12-06T15:31:46.953Z] Temp file deleted.
+[2025-12-06T15:31:46.953Z] Print job completed successfully.
+[2025-12-06T15:37:36.928Z] PRINT ERROR: [TimedOutError] Make sure your printer is connected
+[2025-12-06T15:46:06.886Z] PRINT ERROR: [TimedOutError] Make sure your printer is connected
+[2025-12-06T15:52:52.065Z] PRINT ERROR: [TimedOutError] Make sure your printer is connected
+[2025-12-06T16:00:42.543Z] Found printers: ["POS-80","Microsoft Print to PDF"]
+[2025-12-06T16:00:42.544Z] Selected printer: POS-80
+[2025-12-06T16:00:42.545Z] HTML temp file created: C:\Users\KASHIF~1\AppData\Local\Temp\bill_1765036842544.html
+[2025-12-06T16:00:43.163Z] Print window fully loaded and rendered.
+[2025-12-06T16:00:44.292Z] Print callback -> success: true, reason: 
+[2025-12-06T16:00:44.293Z] Temp file deleted.
+[2025-12-06T16:00:44.293Z] Print job completed successfully.
+[2025-12-06T16:03:55.259Z] Found printers: ["POS-80","Microsoft Print to PDF"]
+[2025-12-06T16:03:55.260Z] Selected printer: POS-80
+[2025-12-06T16:03:55.269Z] HTML temp file created: C:\Users\KASHIF~1\AppData\Local\Temp\bill_1765037035261.html
+[2025-12-06T16:03:56.004Z] Print window fully loaded and rendered.
+[2025-12-06T16:03:56.829Z] Print callback -> success: true, reason: 
+[2025-12-06T16:03:56.830Z] Temp file deleted.
+[2025-12-06T16:03:56.831Z] Print job completed successfully.
+[2025-12-06T16:08:25.303Z] Found printers: ["POS-80","Microsoft Print to PDF"]
+[2025-12-06T16:08:25.305Z] Selected printer: POS-80
+[2025-12-06T16:08:25.345Z] Print ERROR: Cannot read properties of undefined (reading 'map')
+TypeError: Cannot read properties of undefined (reading 'map')
+    at buildPrintTemplate (file:///D:/foodapp-billing/electron/main.js:155:30)
+    at file:///D:/foodapp-billing/electron/main.js:86:23
+    at async WebContents.<anonymous> (node:electron/js2c/browser_init:2:77963)
+[2025-12-06T16:09:12.724Z] Found printers: ["POS-80","Microsoft Print to PDF"]
+[2025-12-06T16:09:12.725Z] Selected printer: POS-80
+[2025-12-06T16:09:12.725Z] Print ERROR: Cannot read properties of undefined (reading 'map')
+TypeError: Cannot read properties of undefined (reading 'map')
+    at buildPrintTemplate (file:///D:/foodapp-billing/electron/main.js:155:30)
+    at file:///D:/foodapp-billing/electron/main.js:86:23
+    at async WebContents.<anonymous> (node:electron/js2c/browser_init:2:77963)
+[2025-12-06T16:09:37.929Z] Found printers: ["POS-80","Microsoft Print to PDF"]
+[2025-12-06T16:09:37.929Z] Selected printer: POS-80
+[2025-12-06T16:09:37.930Z] Print ERROR: Cannot read properties of undefined (reading 'map')
+TypeError: Cannot read properties of undefined (reading 'map')
+    at buildPrintTemplate (file:///D:/foodapp-billing/electron/main.js:155:30)
+    at file:///D:/foodapp-billing/electron/main.js:86:23
+    at async WebContents.<anonymous> (node:electron/js2c/browser_init:2:77963)
+[2025-12-06T16:10:29.672Z] Found printers: ["POS-80","Microsoft Print to PDF"]
+[2025-12-06T16:10:29.673Z] Selected printer: POS-80
+[2025-12-06T16:10:29.673Z] Printing with electron-pos-printer...
+[2025-12-06T16:10:33.089Z] Print ERROR: undefined
+undefined
+[2025-12-06T16:12:35.237Z] Found printers: ["POS-80","Microsoft Print to PDF"]
+[2025-12-06T16:12:35.239Z] Selected printer: POS-80
+[2025-12-06T16:12:35.239Z] Printer details: {"name":"POS-80","displayName":"POS-80","description":"","status":0,"isDefault":true,"options":{"printer-make-and-model":"POS-80 11.3.0.1","system_driverinfo":"POS-80 11.3.0.1;;10.0.22621.3810 (WinBuild.160101.0800);Microsoft® Windows® Operating System"}}
+[2025-12-06T16:12:35.278Z] Printing with options: {"preview":false,"margin":"0 0 0 0","copies":1,"printerName":"POS-80","timeOutPerLine":2000,"silent":true,"width":"80mm"}
+[2025-12-06T16:12:35.279Z] Print data: [{"type":"text","value":"CHEEZINESS","style":{"fontSize":20,"bold":true,"align":"center","marginBottom":8}},{"type":"text","value":"HASILPUR","style":{"fontSize":18,"bold":true,"align":"center","marginBottom":8}},{"type":"text","value":"63F Mor Near Al Wahab Motors\nChona Walla Road, Hasilpur\nContact: 03095870659","style":{"align":"center","marginBottom":10}},{"type":"text","value":"Order #ORD-1765037555181\n06/12/2025, 9:12:35 pm","style":{"align":"center","marginBottom":10}},{"type":"table","tableHeader":[{"value":"Item","style":{"bold":true}},{"value":"Qty","style":{"bold":true}},{"value":"Total","style":{"bold":true}}],"tableBody":[[{"value":"Burger"},{"value":"1","align":"center"},{"value":"350.00","align":"right"}]],"style":{"marginTop":10}},{"type":"text","value":"SUBTOTAL: 350.00\nTAX: 0.00\nTOTAL: 350.00","style":{"fontSize":16,"bold":true,"align":"right","marginTop":10}},{"type":"text","value":"Payment: CASH","style":{"fontSize":14,"align":"center","marginTop":10}},{"type":"text","value":"Thank you for your order!\nWe hope to serve you again soon!","style":{"align":"center","marginTop":10,"bold":false}}]
+[2025-12-06T16:12:51.491Z] Print ERROR: [TimedOutError] Make sure your printer is connected
+No stack
+[2025-12-06T16:13:57.219Z] Found printers: ["POS-80","Microsoft Print to PDF"]
+[2025-12-06T16:13:57.221Z] Selected printer: POS-80
+[2025-12-06T16:13:57.221Z] Printer details: {"name":"POS-80","displayName":"POS-80","description":"","status":0,"isDefault":true,"options":{"printer-make-and-model":"POS-80 11.3.0.1","system_driverinfo":"POS-80 11.3.0.1;;10.0.22621.3810 (WinBuild.160101.0800);Microsoft® Windows® Operating System"}}
+[2025-12-06T16:13:57.257Z] Printing with options: {"preview":false,"margin":"0 0 0 0","copies":1,"printerName":"POS-80","timeOutPerLine":4000,"silent":true,"width":"80mm"}
+[2025-12-06T16:13:57.258Z] Print data: [{"type":"text","value":"CHEEZINESS","style":{"fontSize":20,"bold":true,"align":"center","marginBottom":8}},{"type":"text","value":"HASILPUR","style":{"fontSize":18,"bold":true,"align":"center","marginBottom":8}},{"type":"text","value":"63F Mor Near Al Wahab Motors\nChona Walla Road, Hasilpur\nContact: 03095870659","style":{"align":"center","marginBottom":10}},{"type":"text","value":"Order #ORD-1765037637170\n06/12/2025, 9:13:57 pm","style":{"align":"center","marginBottom":10}},{"type":"table","tableHeader":[{"value":"Item","style":{"bold":true}},{"value":"Qty","style":{"bold":true}},{"value":"Total","style":{"bold":true}}],"tableBody":[[{"value":"Burger"},{"value":"1","align":"center"},{"value":"350.00","align":"right"}],[{"value":"Cheeseburger"},{"value":"1","align":"center"},{"value":"6.99","align":"right"}]],"style":{"marginTop":10}},{"type":"text","value":"SUBTOTAL: 356.99\nTAX: 0.00\nTOTAL: 356.99","style":{"fontSize":16,"bold":true,"align":"right","marginTop":10}},{"type":"text","value":"Payment: CASH","style":{"fontSize":14,"align":"center","marginTop":10}},{"type":"text","value":"Thank you for your order!\nWe hope to serve you again soon!","style":{"align":"center","marginTop":10,"bold":false}}]
+[2025-12-06T16:14:29.463Z] Print ERROR: [TimedOutError] Make sure your printer is connected
+No stack
+[2025-12-06T16:16:25.933Z] Starting ESC/POS print...
+[2025-12-06T16:16:26.761Z] ESC/POS Print ERROR: No USB printer found
+[2025-12-06T16:22:17.664Z] Found printers: ["POS-80","Microsoft Print to PDF"]
+[2025-12-06T16:22:17.666Z] Selected printer: POS-80
+[2025-12-06T16:22:17.666Z] Printer details: {"name":"POS-80","displayName":"POS-80","description":"","status":0,"isDefault":true,"options":{"printer-make-and-model":"POS-80 11.3.0.1","system_driverinfo":"POS-80 11.3.0.1;;10.0.22621.3810 (WinBuild.160101.0800);Microsoft® Windows® Operating System"}}
+[2025-12-06T16:22:17.704Z] Printing with options: {"preview":true,"margin":"0 0 0 0","copies":1,"printerName":"POS-80","timeOutPerLine":1000,"silent":true,"width":"80mm"}
+[2025-12-06T16:22:17.705Z] Print data: [{"type":"text","value":"CHEEZINESS","style":{"fontSize":20,"bold":true,"align":"center","marginBottom":8}},{"type":"text","value":"HASILPUR","style":{"fontSize":18,"bold":true,"align":"center","marginBottom":8}},{"type":"text","value":"63F Mor Near Al Wahab Motors\nChona Walla Road, Hasilpur\nContact: 03095870659","style":{"align":"center","marginBottom":10}},{"type":"text","value":"Order #ORD-1765038137608\n06/12/2025, 9:22:17 pm","style":{"align":"center","marginBottom":10}},{"type":"table","tableHeader":[{"value":"Item","style":{"bold":true}},{"value":"Qty","style":{"bold":true}},{"value":"Total","style":{"bold":true}}],"tableBody":[[{"value":"Coke 1.5 L"},{"value":"1","align":"center"},{"value":"150.00","align":"right"}],[{"value":"Burger"},{"value":"1","align":"center"},{"value":"350.00","align":"right"}]],"style":{"marginTop":10}},{"type":"text","value":"SUBTOTAL: 500.00\nTAX: 0.00\nTOTAL: 500.00","style":{"fontSize":16,"bold":true,"align":"right","marginTop":10}},{"type":"text","value":"Payment: CASH","style":{"fontSize":14,"align":"center","marginTop":10}},{"type":"text","value":"Thank you for your order!\nWe hope to serve you again soon!","style":{"align":"center","marginTop":10,"bold":false}}]
+[2025-12-07T12:36:47.571Z] Print ERROR: Cannot read properties of undefined (reading 'timestamp')
+TypeError: Cannot read properties of undefined (reading 'timestamp')
+    at buildPrintTemplate (file:///D:/foodapp-billing/electron/main.js:107:31)
+    at file:///D:/foodapp-billing/electron/main.js:79:23
+    at async WebContents.<anonymous> (node:electron/js2c/browser_init:2:77963)
+[2025-12-07T12:45:20.513Z] Print ERROR: [TimedOutError] Make sure your printer is connected
+No stack
+[2025-12-07T12:52:47.746Z] Found printers: ["POS-80","Microsoft Print to PDF"]
+[2025-12-07T12:52:47.749Z] Selected printer: POS-80
+[2025-12-07T12:52:47.790Z] HTML temp file created: C:\Users\KASHIF~1\AppData\Local\Temp\bill_1765111967750.html
+[2025-12-07T12:52:48.597Z] Print window fully loaded and rendered.
+[2025-12-07T12:52:50.246Z] Print callback -> success: true, reason: 
+[2025-12-07T12:52:50.248Z] Temp file deleted.
+[2025-12-07T12:52:50.248Z] Print job completed successfully.
+[2025-12-07T12:53:28.553Z] Found printers: ["POS-80","Microsoft Print to PDF"]
+[2025-12-07T12:53:28.554Z] Selected printer: POS-80
+[2025-12-07T12:53:28.557Z] HTML temp file created: C:\Users\KASHIF~1\AppData\Local\Temp\bill_1765112008555.html
+[2025-12-07T12:53:29.397Z] Print window fully loaded and rendered.
+[2025-12-07T12:53:30.894Z] Print callback -> success: true, reason: 
+[2025-12-07T12:53:30.895Z] Temp file deleted.
+[2025-12-07T12:53:30.896Z] Print job completed successfully.
+[2025-12-07T13:23:12.623Z] Print error: usb.on is not a function
+[2025-12-07T13:25:34.708Z] Print error: usb.on is not a function
+[2025-12-07T13:26:48.070Z] USB Print Error: usb.on is not a function
+[2025-12-07T13:26:48.071Z] Print error: usb.on is not a function
+[2025-12-07T13:27:38.900Z] Print error: usb.on is not a function
+[2025-12-07T13:29:04.486Z] Print error: No driver set!
+[2025-12-07T13:32:53.453Z] Starting print process...
+[2025-12-07T13:32:53.454Z] Attempting system printing...
+[2025-12-07T13:32:54.834Z] Bill printed successfully via system printer.
