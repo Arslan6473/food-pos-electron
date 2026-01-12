@@ -21,12 +21,14 @@ export default function SalesReport() {
       setLoading(false);
     }
   };
-
+  const summary = reportData?.summary || {};
+  const topItems = reportData?.topItems || [];
+  const dailySales = reportData?.dailySales || [];
   const periods = [
-    { id: "today", name: "Today" },
-    { id: "week", name: "This Week" },
-    { id: "month", name: "This Month" },
-    { id: "year", name: "This Year" },
+    { _id: "today", name: "Today" },
+    { _id: "week", name: "This Week" },
+    { _id: "month", name: "This Month" },
+    { _id: "year", name: "This Year" },
   ];
 
   if (loading) {
@@ -40,8 +42,6 @@ export default function SalesReport() {
     );
   }
 
-  const summary = reportData?.summary || {};
-
   return (
     <div className="p-4">
       <h1 className="text-3xl font-bold text-gray-800 mb-1">Sales Reports</h1>
@@ -51,10 +51,10 @@ export default function SalesReport() {
       <div className="flex gap-3 mb-6">
         {periods.map((p) => (
           <button
-            key={p.id}
-            onClick={() => setPeriod(p.id)}
+            key={p._id}
+            onClick={() => setPeriod(p._id)}
             className={`px-6 py-3 rounded-lg font-medium ${
-              period === p.id
+              period === p._id
                 ? "bg-blue-500 text-white"
                 : "bg-white text-gray-700 hover:bg-gray-50"
             }`}
@@ -68,9 +68,7 @@ export default function SalesReport() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
         <div className="bg-green-600 text-white rounded-lg p-6">
           <DollarSign />
-          <p className="text-3xl font-bold">
-            Rs: {(summary.total_sales || 0)}
-          </p>
+          <p className="text-3xl font-bold">Rs: {summary.total_sales || 0}</p>
           <p>Total Sales</p>
         </div>
 
@@ -82,9 +80,7 @@ export default function SalesReport() {
 
         <div className="bg-purple-600 text-white rounded-lg p-6">
           <TrendingUp />
-          <p className="text-3xl font-bold">
-            Rs: {(summary.average_order || 0)}
-          </p>
+          <p className="text-3xl font-bold">Rs: {summary.average_order || 0}</p>
           <p>Average Order</p>
         </div>
       </div>
@@ -94,11 +90,14 @@ export default function SalesReport() {
         <div className="bg-white rounded-lg p-6 shadow">
           <h2 className="text-xl font-bold mb-4">Top Selling Items</h2>
 
-          {reportData.topItems.length === 0 ? (
+          {topItems.length === 0 ? (
             <p className="text-gray-400 text-center">No data available</p>
           ) : (
-            reportData.topItems.map((item, i) => (
-              <div key={i} className="flex justify-between p-3 bg-gray-50 rounded mb-2">
+            topItems.map((item, i) => (
+              <div
+                key={i}
+                className="flex justify-between p-3 bg-gray-50 rounded mb-2"
+              >
                 <div>
                   <p className="font-medium">{item.item_name}</p>
                   <p className="text-sm text-gray-500">
@@ -117,11 +116,14 @@ export default function SalesReport() {
         <div className="bg-white rounded-lg p-6 shadow">
           <h2 className="text-xl font-bold mb-4">Daily Breakdown</h2>
 
-          {reportData.dailySales.length === 0 ? (
+          {dailySales.length === 0 ? (
             <p className="text-gray-400 text-center">No data available</p>
           ) : (
-            reportData.dailySales.map((day, i) => (
-              <div key={i} className="flex justify-between p-3 bg-gray-50 rounded mb-2">
+            dailySales.map((day, i) => (
+              <div
+                key={i}
+                className="flex justify-between p-3 bg-gray-50 rounded mb-2"
+              >
                 <div>
                   <p className="font-medium">
                     {new Date(day.date).toDateString()}
@@ -129,11 +131,9 @@ export default function SalesReport() {
                   <p className="text-sm text-gray-500">{day.orders} orders</p>
                 </div>
                 <div className="text-right">
-                  <p className="font-bold text-green-600">
-                    Rs: {day.sales}
-                  </p>
+                  <p className="font-bold text-green-600">Rs: {day.sales}</p>
                   <p className="text-sm text-gray-500">
-                    Rs: {(day.orders ? day.sales / day.orders : 0)} avg
+                    Rs: {day.orders ? day.sales / day.orders : 0} avg
                   </p>
                 </div>
               </div>

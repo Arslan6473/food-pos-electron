@@ -1,6 +1,5 @@
 const { app, BrowserWindow, ipcMain } = require("electron");
 const path = require("path");
-const fs = require("fs");
 const Database = require("./database.js");
 
 let mainWindow;
@@ -22,7 +21,7 @@ function createWindow() {
 
   if (process.env.NODE_ENV === "development" || !app.isPackaged) {
     mainWindow.loadURL("http://localhost:5173");
-    mainWindow.webContents.openDevTools();
+    // mainWindow.webContents.openDevTools();
   } else {
     mainWindow.loadFile(path.join(__dirname, "../dist/index.html"));
   }
@@ -30,11 +29,11 @@ function createWindow() {
 
 app.whenReady().then(async () => {
   db = new Database();
-  await db.init();
+
+  await new Promise(resolve => setTimeout(resolve, 1000));
 
   createWindow();
 
-  // Menu Items
   ipcMain.handle("get-order-by-id", (_, orderId) => db.getOrderById(orderId));
   ipcMain.handle("get-menu-items", () => db.getMenuItems());
   ipcMain.handle("add-menu-item", (_, item) => db.addMenuItem(item));
@@ -49,11 +48,12 @@ app.whenReady().then(async () => {
   ipcMain.handle("get-order-details", (_, orderId) =>
     db.getOrderDetails(orderId)
   );
-  // Add this line for delete order
   ipcMain.handle("delete-order", (_, orderId) => db.deleteOrder(orderId));
 
+  // Reports
   ipcMain.handle("get-sales-report", (_, period) => db.getSalesReport(period));
   ipcMain.handle("get-dashboard-stats", () => db.getDashboardStats());
+
 
   app.on("activate", () => {
     if (BrowserWindow.getAllWindows().length === 0) {

@@ -1,120 +1,127 @@
-import { useState, useEffect } from 'react'
-import { Plus, Edit2, Trash2, Save, X, Search } from 'lucide-react'
+import { useState, useEffect } from "react";
+import { Plus, Edit2, Trash2, Save, X, Search } from "lucide-react";
 
 export default function MenuManagement() {
-  const [menuItems, setMenuItems] = useState([])
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const [editingItem, setEditingItem] = useState(null)
-  const [searchTerm, setSearchTerm] = useState('')
-  const [selectedCategory, setSelectedCategory] = useState('all')
-  const [availabilityFilter, setAvailabilityFilter] = useState('all')
+  const [menuItems, setMenuItems] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [editingItem, setEditingItem] = useState(null);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [availabilityFilter, setAvailabilityFilter] = useState("all");
   const [formData, setFormData] = useState({
-    name: '',
-    category: '',
-    price: '',
-    description: '',
-    available: true
-  })
+    name: "",
+    category: "",
+    price: "",
+    description: "",
+    available: true,
+  });
 
   useEffect(() => {
-    loadMenuItems()
-  }, [])
+    loadMenuItems();
+  }, []);
 
   const loadMenuItems = async () => {
-    if (!window.electronAPI) {
-      console.warn('⚠️ electronAPI not available (maybe running in browser mode?)')
-    }
     try {
-      const items = await window.electronAPI.getMenuItems()
-      setMenuItems(items)
+      if (!window?.electronAPI?.getMenuItems) {
+        setMenuItems([]);
+        return;
+      }
+
+      const items = await window.electronAPI.getMenuItems();
+      setMenuItems(Array.isArray(items) ? items : []);
     } catch (error) {
-      console.error('Failed to load menu:', error)
+      console.error("Failed to load menu:", error);
+      setMenuItems([]);
     }
-  }
+  };
 
   const handleOpenModal = (item = null) => {
     if (item) {
-      setEditingItem(item)
+      setEditingItem(item);
       setFormData({
         name: item.name,
         category: item.category,
         price: item.price,
-        description: item.description || '',
-        available: Boolean(item.available)
-      })
+        description: item.description || "",
+        available: Boolean(item.available),
+      });
     } else {
-      setEditingItem(null)
+      setEditingItem(null);
       setFormData({
-        name: '',
-        category: '',
-        price: '',
-        description: '',
-        available: true
-      })
+        name: "",
+        category: "",
+        price: "",
+        description: "",
+        available: true,
+      });
     }
-    setIsModalOpen(true)
-  }
+    setIsModalOpen(true);
+  };
 
   const handleCloseModal = () => {
-    setIsModalOpen(false)
-    setEditingItem(null)
-  }
+    setIsModalOpen(false);
+    setEditingItem(null);
+  };
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    
+    e.preventDefault();
+
     try {
       if (editingItem) {
-        await window.electronAPI.updateMenuItem(editingItem.id, formData)
-      
+        await window.electronAPI.updateMenuItem(editingItem._id, formData);
       } else {
-        await window.electronAPI.addMenuItem(formData)
-        
+        await window.electronAPI.addMenuItem(formData);
       }
-      
-      handleCloseModal()
-      loadMenuItems()
-    } catch (error) {
-      console.error('Failed to save item:', error)
 
+      handleCloseModal();
+      loadMenuItems();
+    } catch (error) {
+      console.error("Failed to save item:", error);
     }
-  }
+  };
 
   const handleDelete = async (id) => {
-    if (confirm('Are you sure you want to delete this item?')) {
+    if (confirm("Are you sure you want to delete this item?")) {
       try {
-        await window.electronAPI.deleteMenuItem(id)
-   
-        loadMenuItems()
+        await window.electronAPI.deleteMenuItem(id);
+
+        loadMenuItems();
       } catch (error) {
-        console.error('Failed to delete item:', error)
-        
+        console.error("Failed to delete item:", error);
       }
     }
-  }
+  };
 
   // Get unique categories for filter
-  const categories = ['all', ...new Set(menuItems.map(item => item.category))]
+  const categories = [
+    "all",
+    ...new Set(menuItems.map((item) => item.category)),
+  ];
 
+  const filteredItems = menuItems.filter((item) => {
+    const matchesSearch =
+      item?.name?.toLowerCase().includes(searchTerm?.toLowerCase()) ||
+      (item?.description || "")
+        .toLowerCase()
+        .includes(searchTerm?.toLowerCase());
+    const matchesCategory =
+      selectedCategory === "all" || item?.category === selectedCategory;
+    const matchesAvailability =
+      availabilityFilter === "all" ||
+      (availabilityFilter === "available" && item?.available) ||
+      (availabilityFilter === "unavailable" && !item?.available);
 
-  const filteredItems = menuItems.filter(item => {
-    const matchesSearch = item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         item.description.toLowerCase().includes(searchTerm.toLowerCase())
-    const matchesCategory = selectedCategory === 'all' || item.category === selectedCategory
-    const matchesAvailability = 
-      availabilityFilter === 'all' || 
-      (availabilityFilter === 'available' && item.available) ||
-      (availabilityFilter === 'unavailable' && !item.available)
-    
-    return matchesSearch && matchesCategory && matchesAvailability
-  })
+    return matchesSearch && matchesCategory && matchesAvailability;
+  });
 
   return (
     <div className="p-4">
       <div className="flex justify-between items-center mb-6">
         <div>
           <h1 className="text-3xl font-bold text-gray-800">Menu Management</h1>
-          <p className="text-gray-600 mt-1">Manage your restaurant menu items</p>
+          <p className="text-gray-600 mt-1">
+            Manage your restaurant menu items
+          </p>
         </div>
         <button
           onClick={() => handleOpenModal()}
@@ -130,7 +137,10 @@ export default function MenuManagement() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {/* Search */}
           <div className="relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+            <Search
+              className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
+              size={20}
+            />
             <input
               type="text"
               placeholder="Search items..."
@@ -147,9 +157,13 @@ export default function MenuManagement() {
             className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
             <option value="all">All Categories</option>
-            {categories.filter(cat => cat !== 'all').map(category => (
-              <option key={category} value={category}>{category}</option>
-            ))}
+            {categories
+              .filter((cat) => cat !== "all")
+              .map((category) => (
+                <option key={category} value={category}>
+                  {category}
+                </option>
+              ))}
           </select>
 
           {/* Availability Filter */}
@@ -191,48 +205,59 @@ export default function MenuManagement() {
             <tbody className="bg-white divide-y divide-gray-200">
               {filteredItems.length === 0 ? (
                 <tr>
-                  <td colSpan="5" className="px-6 py-8 text-center text-gray-500">
+                  <td
+                    colSpan="5"
+                    className="px-6 py-8 text-center text-gray-500"
+                  >
                     <div className="flex flex-col items-center justify-center">
-                      <div className="text-lg font-medium mb-2">No items found</div>
-                      <div className="text-sm">Try adjusting your search or filters</div>
+                      <div className="text-lg font-medium mb-2">
+                        No items found
+                      </div>
+                      <div className="text-sm">
+                        Try adjusting your search or filters
+                      </div>
                     </div>
                   </td>
                 </tr>
               ) : (
                 filteredItems.map((item) => (
-                  <tr 
-                    key={item.id} 
+                  <tr
+                    key={item._id}
                     className={`hover:bg-gray-50 transition-colors ${
-                      !item.available ? 'opacity-60' : ''
+                      !item.available ? "opacity-60" : ""
                     }`}
                   >
                     <td className="px-6 py-4">
                       <div>
-                        <div className="font-medium text-gray-900">{item.name}</div>
-                        {item.description && (
+                        <div className="font-medium text-gray-900">
+                          {item?.name}
+                        </div>
+                        {item?.description && (
                           <div className="text-sm text-gray-500 mt-1 max-w-md">
-                            {item.description}
+                            {item?.description}
                           </div>
                         )}
                       </div>
                     </td>
                     <td className="px-6 py-4">
                       <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-                        {item.category}
+                        {item?.category}
                       </span>
                     </td>
                     <td className="px-6 py-4">
                       <span className="text-lg font-semibold text-gray-900">
-                        Rs: {item.price}
+                        Rs: {item?.price}
                       </span>
                     </td>
                     <td className="px-6 py-4">
-                      <span className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${
-                        item.available
-                          ? 'bg-green-100 text-green-800'
-                          : 'bg-red-100 text-red-800'
-                      }`}>
-                        {item.available ? 'Available' : 'Unavailable'}
+                      <span
+                        className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${
+                          item?.available
+                            ? "bg-green-100 text-green-800"
+                            : "bg-red-100 text-red-800"
+                        }`}
+                      >
+                        {item?.available ? "Available" : "Unavailable"}
                       </span>
                     </td>
                     <td className="px-6 py-4">
@@ -245,7 +270,7 @@ export default function MenuManagement() {
                           Edit
                         </button>
                         <button
-                          onClick={() => handleDelete(item.id)}
+                          onClick={() => handleDelete(item._id)}
                           className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-colors"
                         >
                           <Trash2 size={16} className="mr-1" />
@@ -265,12 +290,18 @@ export default function MenuManagement() {
           <div className="bg-gray-50 px-6 py-3 border-t">
             <div className="flex justify-between items-center">
               <div className="text-sm text-gray-700">
-                Showing <span className="font-medium">{filteredItems.length}</span> of{' '}
+                Showing{" "}
+                <span className="font-medium">{filteredItems.length}</span> of{" "}
                 <span className="font-medium">{menuItems.length}</span> items
               </div>
               <div className="text-sm text-gray-500">
-                {selectedCategory !== 'all' && `Category: ${selectedCategory}`}
-                {availabilityFilter !== 'all' && ` • ${availabilityFilter === 'available' ? 'Available' : 'Unavailable'}`}
+                {selectedCategory !== "all" && `Category: ${selectedCategory}`}
+                {availabilityFilter !== "all" &&
+                  ` • ${
+                    availabilityFilter === "available"
+                      ? "Available"
+                      : "Unavailable"
+                  }`}
               </div>
             </div>
           </div>
@@ -283,7 +314,7 @@ export default function MenuManagement() {
           <div className="bg-white rounded-lg shadow-xl p-8 max-w-md w-full mx-auto">
             <div className="flex justify-between items-center mb-6">
               <h2 className="text-2xl font-bold text-gray-800">
-                {editingItem ? 'Edit Item' : 'Add New Item'}
+                {editingItem ? "Edit Item" : "Add New Item"}
               </h2>
               <button
                 onClick={handleCloseModal}
@@ -302,7 +333,9 @@ export default function MenuManagement() {
                   type="text"
                   required
                   value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, name: e.target.value })
+                  }
                   className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
                   placeholder="Enter item name"
                 />
@@ -316,7 +349,9 @@ export default function MenuManagement() {
                   type="text"
                   required
                   value={formData.category}
-                  onChange={(e) => setFormData({ ...formData, category: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, category: e.target.value })
+                  }
                   className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
                   placeholder="e.g., Main Course, Appetizers, Drinks"
                 />
@@ -332,7 +367,9 @@ export default function MenuManagement() {
                   min="0"
                   required
                   value={formData.price}
-                  onChange={(e) => setFormData({ ...formData, price: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, price: e.target.value })
+                  }
                   className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
                   placeholder="0.00"
                 />
@@ -344,7 +381,9 @@ export default function MenuManagement() {
                 </label>
                 <textarea
                   value={formData.description}
-                  onChange={(e) => setFormData({ ...formData, description: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, description: e.target.value })
+                  }
                   className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
                   rows="3"
                   placeholder="Enter item description (optional)"
@@ -356,10 +395,15 @@ export default function MenuManagement() {
                   type="checkbox"
                   id="available"
                   checked={formData.available}
-                  onChange={(e) => setFormData({ ...formData, available: e.target.checked })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, available: e.target.checked })
+                  }
                   className="w-4 h-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
                 />
-                <label htmlFor="available" className="ml-2 text-sm text-gray-700">
+                <label
+                  htmlFor="available"
+                  className="ml-2 text-sm text-gray-700"
+                >
                   Available for sale
                 </label>
               </div>
@@ -377,7 +421,7 @@ export default function MenuManagement() {
                   className="flex-1 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors font-medium flex items-center justify-center gap-2"
                 >
                   <Save size={18} />
-                  {editingItem ? 'Update' : 'Add'} Item
+                  {editingItem ? "Update" : "Add"} Item
                 </button>
               </div>
             </form>
@@ -385,5 +429,5 @@ export default function MenuManagement() {
         </div>
       )}
     </div>
-  )
+  );
 }

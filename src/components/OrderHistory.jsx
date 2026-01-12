@@ -53,10 +53,10 @@ export default function OrderHistory() {
     try {
       const success = await window.electronAPI.deleteOrder(orderId);
       if (success) {
-        setOrders(orders.filter((order) => order.id !== orderId));
+        setOrders(orders.filter((order) => order._id !== orderId));
         setShowDeleteConfirm(false);
         setOrderToDelete(null);
-        if (selectedOrder && selectedOrder.id === orderId) {
+        if (selectedOrder && selectedOrder._id === orderId) {
           setSelectedOrder(null);
         }
       }
@@ -391,7 +391,9 @@ export default function OrderHistory() {
 
   const filteredOrders = orders.filter((order) => {
     const matchesSearch =
-      order.order_number.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      (order.order_number || "")
+        .toLowerCase()
+        .includes(searchTerm.toLowerCase()) ||
       (order.customer_name &&
         order.customer_name.toLowerCase().includes(searchTerm.toLowerCase())) ||
       (order.table_number &&
@@ -451,8 +453,6 @@ export default function OrderHistory() {
               <option value="dine">Dine In</option>
             </select>
           </div>
-
-     
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -563,7 +563,7 @@ export default function OrderHistory() {
                 </tr>
               ) : (
                 filteredOrders.map((order) => (
-                  <tr key={order.id} className="hover:bg-gray-50">
+                  <tr key={order._id} className="hover:bg-gray-50">
                     <td className="px-6 py-4 whitespace-nowrap">
                       <span className="text-sm font-medium text-blue-600">
                         {order.order_number}
@@ -592,7 +592,6 @@ export default function OrderHistory() {
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
                       {order.discount_percentage > 0 ? (
                         <span className="text-red-600 font-medium">
-                       
                           {order.discount_percentage}%
                           {order.discount_amount > 0 && (
                             <span className="block text-xs">
@@ -610,14 +609,14 @@ export default function OrderHistory() {
                     <td className="px-6 py-4 whitespace-nowrap text-sm">
                       <div className="flex gap-2">
                         <button
-                          onClick={() => handleViewDetails(order.id)}
+                          onClick={() => handleViewDetails(order._id)}
                           className="p-2 bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-100 transition-colors"
                           title="View Details"
                         >
                           <Eye size={16} />
                         </button>
                         <button
-                          onClick={() => handlePrintReceipt(order.id)}
+                          onClick={() => handlePrintReceipt(order._id)}
                           className="p-2 bg-green-50 text-green-600 rounded-lg hover:bg-green-100 transition-colors"
                           title="Print Receipt"
                         >
@@ -696,7 +695,7 @@ export default function OrderHistory() {
                 Cancel
               </button>
               <button
-                onClick={() => handleDeleteOrder(orderToDelete.id)}
+                onClick={() => handleDeleteOrder(orderToDelete._id)}
                 className="flex-1 py-3 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors font-medium"
               >
                 Delete Order
@@ -762,7 +761,7 @@ export default function OrderHistory() {
                     </p>
                   </div>
                 )}
-               
+
                 {selectedOrder.customer_name && (
                   <div className="bg-gray-50 p-4 rounded-lg">
                     <p className="text-sm text-gray-500 mb-1">Customer Name</p>
@@ -777,7 +776,6 @@ export default function OrderHistory() {
                       Discount Applied
                     </p>
                     <p className="font-medium text-red-700">
-                    
                       {selectedOrder.discount_percentage}%
                       {selectedOrder.discount_amount > 0 && (
                         <span className="block text-sm">
@@ -858,7 +856,7 @@ export default function OrderHistory() {
                   Delete Order
                 </button>
                 <button
-                  onClick={() => handlePrintReceipt(selectedOrder.id)}
+                  onClick={() => handlePrintReceipt(selectedOrder._id)}
                   className="flex-1 bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 transition-colors font-medium flex items-center justify-center gap-2"
                 >
                   <Printer size={20} />

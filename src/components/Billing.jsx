@@ -32,7 +32,10 @@ export default function Billing() {
   const loadMenuItems = async () => {
     try {
       const items = await window.electronAPI.getMenuItems();
-      setMenuItems(items.filter((item) => item.available));
+
+      const availableItems = items.filter((item) => item.available);
+
+      setMenuItems(availableItems);
     } catch (error) {
       console.error("Failed to load menu:", error);
     }
@@ -49,17 +52,19 @@ export default function Billing() {
         selectedCategory === "All" || item.category === selectedCategory;
       const matchesSearch =
         item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        item.description.toLowerCase().includes(searchQuery.toLowerCase());
+        (item.description || "")
+          .toLowerCase()
+          .includes(searchQuery.toLowerCase());
       return matchesCategory && matchesSearch;
     });
   }, [menuItems, selectedCategory, searchQuery]);
 
   const addToCart = (item) => {
-    const existingItem = cart.find((cartItem) => cartItem.id === item.id);
+    const existingItem = cart.find((cartItem) => cartItem._id === item._id);
     if (existingItem) {
       setCart(
         cart.map((cartItem) =>
-          cartItem.id === item.id
+          cartItem._id === item._id
             ? { ...cartItem, quantity: cartItem.quantity + 1 }
             : cartItem
         )
@@ -73,7 +78,7 @@ export default function Billing() {
     setCart(
       cart
         .map((item) => {
-          if (item.id === itemId) {
+          if (item._id === itemId) {
             const newQuantity = item.quantity + change;
             return newQuantity > 0 ? { ...item, quantity: newQuantity } : item;
           }
@@ -84,7 +89,7 @@ export default function Billing() {
   };
 
   const removeFromCart = (itemId) => {
-    setCart(cart.filter((item) => item.id !== itemId));
+    setCart(cart.filter((item) => item._id !== itemId));
   };
 
   const calculateSubtotal = () =>
@@ -398,7 +403,7 @@ export default function Billing() {
 
     const orderData = {
       items: cart.map((item) => ({
-        id: item.id,
+        id: item._id,
         name: item.name,
         quantity: item.quantity,
         price: item.price,
@@ -492,7 +497,7 @@ export default function Billing() {
                 <tbody className="divide-y divide-gray-100">
                   {filteredItems.map((item) => (
                     <tr
-                      key={item.id}
+                      key={item._id}
                       className="hover:bg-blue-50 transition-colors"
                     >
                       <td className="p-3">
@@ -502,7 +507,7 @@ export default function Billing() {
                       </td>
                       <td className="p-3">
                         <div className="text-sm text-gray-600 max-w-xs truncate">
-                          {item.description}
+                          {item.description || ""}
                         </div>
                       </td>
                       <td className="p-3 text-right">
@@ -552,7 +557,7 @@ export default function Billing() {
             <div className="space-y-2 pr-2">
               {cart.map((item) => (
                 <div
-                  key={item.id}
+                  key={item._id}
                   className="bg-gray-50 border border-gray-200 rounded-lg p-2"
                 >
                   <div className="flex justify-between items-start mb-2">
@@ -565,7 +570,7 @@ export default function Billing() {
                       </span>
                     </div>
                     <button
-                      onClick={() => removeFromCart(item.id)}
+                      onClick={() => removeFromCart(item._id)}
                       className="text-red-500 hover:text-red-700 p-1 rounded transition-colors"
                     >
                       <Trash2 size={16} />
@@ -574,7 +579,7 @@ export default function Billing() {
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
                       <button
-                        onClick={() => updateQuantity(item.id, -1)}
+                        onClick={() => updateQuantity(item._id, -1)}
                         className="bg-gray-200 hover:bg-gray-300 p-1 rounded transition-colors"
                       >
                         <Minus size={14} />
@@ -583,7 +588,7 @@ export default function Billing() {
                         {item.quantity}
                       </span>
                       <button
-                        onClick={() => updateQuantity(item.id, 1)}
+                        onClick={() => updateQuantity(item._id, 1)}
                         className="bg-gray-200 hover:bg-gray-300 p-1 rounded transition-colors"
                       >
                         <Plus size={14} />
